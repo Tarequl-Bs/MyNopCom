@@ -34,6 +34,8 @@ namespace Nop.Core.Domain.Catalog
         /// </summary>
         public string Name { get; set; }
 
+        public bool IsTarequl { get; set; }
+
         /// <summary>
         /// Gets or sets the short description
         /// </summary>

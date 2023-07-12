@@ -41,6 +41,7 @@ namespace Nop.Web.Models.Catalog
         public IList<VideoModel> VideoModels { get; set; }
 
         public string Name { get; set; }
+        public bool IsTarequl { get; set; }     
         public string ShortDescription { get; set; }
         public string FullDescription { get; set; }
         public string JsonLd { get; set; }
