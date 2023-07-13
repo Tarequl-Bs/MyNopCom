@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Special Products",
+  "SystemName": "Widgets.SpecialProducts",
+  "Version": "4.70.1",
+  "SupportedVersions": [ "4.70" ],
+  "Author": "nopCommerce team",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.SpecialProducts.dll",
+  "Description": "This plugin allows you to Special Product in Product Box and Product Details"
+}
