@@ -25,32 +25,32 @@ namespace Nop.Plugin.Widgets.SpecialProducts.Components
         }
         public async Task<IViewComponentResult> InvokeAsync(string widgetZone, object additionalData)
         {
-            if (widgetZone == "admin_product_details_buttons")
+            if (widgetZone == "admin_product_details_block")
             {
                 if (additionalData is ProductModel model3)
                 {
-                    var product = await _productService.GetProductByIdAsync(model3.Id);
-
-                    if (product != null)
+                    if (model3.Id > 0)
                     {
-                        var record = new SpecialProductModel
+                        var returnModel = _specialProductService.GetSpecialProductByProductId(model3.Id);
+                        if (returnModel == null)
                         {
-                            ProductId = model3.Id,
-                            IsSpecialProduct = true
-                        };
+                            returnModel = new SpecialProductModel()
+                            {
+                                ProductId = model3.Id,
+                                IsSpecialProduct = false
+                            };
 
-                        _specialProductService.SetSpecialProduct(record);
+                        }
+                        return View("~/Plugins/Widgets.SpecialProducts/Views/SetIsSpecial.cshtml", returnModel);
                     }
-                    var returnModel = _specialProductService.GetSpecialProductByProductId(model3.Id);
-                    return View("~/Plugins/Widgets.SpecialProducts/Views/SetIsSpecial.cshtml", returnModel);
                 }
             }
-            if (additionalData is ProductOverviewModel model)
+            else if (additionalData is ProductOverviewModel model)
             {
                 var returnModel = _specialProductService.GetSpecialProductByProductId(model.Id);
                 return View("~/Plugins/Widgets.SpecialProducts/Views/ShowIsSpecial.cshtml", returnModel);
             }
-            if (additionalData is ProductDetailsModel model2)
+            else if (additionalData is ProductDetailsModel model2)
             {
                 var returnModel = _specialProductService.GetSpecialProductByProductId(model2.Id);
                 return View("~/Plugins/Widgets.SpecialProducts/Views/ShowIsSpecial.cshtml", returnModel);

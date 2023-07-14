@@ -27,7 +27,7 @@ namespace Nop.Plugin.Widgets.SpecialProducts
 
         public Task<IList<string>> GetWidgetZonesAsync()
         {
-            return Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.ProductDetailsOverviewTop, PublicWidgetZones.ProductBoxAddinfoBefore, AdminWidgetZones.ProductDetailsButtons});
+            return Task.FromResult<IList<string>>(new List<string> { PublicWidgetZones.ProductDetailsOverviewTop, PublicWidgetZones.ProductBoxAddinfoBefore, AdminWidgetZones.ProductDetailsBlock });
         }
 
         public override async Task InstallAsync()

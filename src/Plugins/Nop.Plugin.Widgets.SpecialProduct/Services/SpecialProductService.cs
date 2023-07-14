@@ -51,25 +51,26 @@ namespace Nop.Plugin.Widgets.SpecialProducts.Services
 
         public virtual void SetSpecialProduct(SpecialProductModel specialProduct)
         {
+            if (specialProduct == null)
+                throw new ArgumentNullException();
+            if (specialProduct.ProductId == 0)
+                return;
             var query = _specialProductRepository.Table;
 
-            var sProduct = query.Where(c => c.ProductId == specialProduct.Id).FirstOrDefault();
-            var specialProductt = new SpecialProduct()
-            {
-                Id = specialProduct.Id,
-                ProductId = specialProduct.ProductId,
-                IsSpecialProduct = specialProduct.IsSpecialProduct,
-            };
+            var sProduct = query.Where(c => c.ProductId == specialProduct.ProductId).FirstOrDefault();
 
             if (sProduct == null)
             {
+                var specialProductt = new SpecialProduct()
+                {
+                    ProductId = specialProduct.ProductId,
+                    IsSpecialProduct = specialProduct.IsSpecialProduct,
+                };
                 _specialProductRepository.Insert(specialProductt);
                 return;
             }
-            
-            sProduct.ProductId = specialProduct.ProductId;
-            sProduct.IsSpecialProduct = specialProduct.IsSpecialProduct;
 
+            sProduct.IsSpecialProduct = specialProduct.IsSpecialProduct;
             _specialProductRepository.Update(sProduct);
         }
     }
