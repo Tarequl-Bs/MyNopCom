@@ -9,7 +9,6 @@
 <div class="form-horizontal">
     <nop-cards id="product-cards">
         <nop-card asp-name="product-rental" asp-icon="fa fa-rocket" asp-title="Special Product" asp-hide-block-attribute-name="Special AttributeName" asp-hide="true" asp-advanced="false">
-            @*asp-hide-block-attribute-name="Special AttributeName" asp-hide="@hideRentalBlock" asp-advanced="@(!Model.ProductEditorSettingsModel.IsRental)">@await Html.PartialAsync("_CreateOrUpdate.Rental", Model)</nop-card>*@
             <div class="card-body">
                 <div class="form-group row">
                     <div class="col-md-3">
@@ -34,7 +33,6 @@
             var IsSpecialProduct = $('#@Html.IdFor(e=>e.IsSpecialProduct)').is(':checked');
             var ProductId = @ProductIdd;
             var json = { productId: ProductId, isSpecialProduct: IsSpecialProduct };
-            console.log(IsSpecialProduct, " ", ProductId, " ", json);
             addAntiForgeryToken(json);
 
             $.ajax({

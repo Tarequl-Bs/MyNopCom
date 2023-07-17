@@ -34,7 +34,7 @@
     <Content Include="Views\_ViewImports.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\ShowIsSpecial.cshtml">
+    <Content Include="Views\Shared\Components\SpecialProduct\Default.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Views\SetIsSpecial.cshtml">

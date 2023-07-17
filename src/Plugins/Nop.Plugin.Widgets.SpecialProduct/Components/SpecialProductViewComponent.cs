@@ -48,12 +48,12 @@ namespace Nop.Plugin.Widgets.SpecialProducts.Components
             else if (additionalData is ProductOverviewModel model)
             {
                 var returnModel = _specialProductService.GetSpecialProductByProductId(model.Id);
-                return View("~/Plugins/Widgets.SpecialProducts/Views/ShowIsSpecial.cshtml", returnModel);
+                return View(returnModel);
             }
             else if (additionalData is ProductDetailsModel model2)
             {
                 var returnModel = _specialProductService.GetSpecialProductByProductId(model2.Id);
-                return View("~/Plugins/Widgets.SpecialProducts/Views/ShowIsSpecial.cshtml", returnModel);
+                return View(returnModel);
             }
 
             return Content("");
