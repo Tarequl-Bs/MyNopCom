@@ -1,0 +1,7 @@
+﻿{
+  "SystemName": "MyCustomRed",
+  "FriendlyName": "My Custom Red",
+  "SupportRTL": true,
+  "PreviewImageUrl": "~/Themes/MyCustomRed/preview.jpg",
+  "PreviewText": "The 'MyCustomRed' site theme"
+}

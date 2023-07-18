@@ -216,10 +216,6 @@ namespace Nop.Web.Areas.Admin.Controllers
                 return await AccessDeniedDataTablesJson();
 
 
-            string aa = "aerd";
-
-            aa.IsTarequl();
-
             //prepare model
             var model = await _categoryModelFactory.PrepareCategoryListModelAsync(searchModel);
 

@@ -1,0 +1,14 @@
+@model Nop.Plugin.Widgets.SpecialProducts.Models.SpecialProductModel
+@{
+    Layout = "";
+}
+
+<div>
+    @if (Model !=null && Model.IsSpecialProduct) {
+        <h4 style="color: red; margin: -5px 0px 5px 0px; padding: 5px 20px; background-color: lightblue;   display: inline-block;">
+            Special Product
+        </h4>
+    }
+    
+</div>
+
